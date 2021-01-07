@@ -56,7 +56,7 @@ import java.util.Map;
  * joined a session. For example, in the following code snippet isNew
  * is called to determine whether a session is new. If it is, the
  * server will require the client to start a session by directing the
- * client to a welcome page <tt>welcomeURL</tt> where a user might be
+ * client to a welcome page <code>welcomeURL</code> where a user might be
  * required to enter some information and send it to the server before
  * gaining access to subsequent pages.
  * <p>
