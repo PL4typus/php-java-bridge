@@ -1,18 +1,22 @@
-dist: trusty
-sudo: required
-
-language: java
-
-jdk:
-  - oraclejdk8
+matrix:
+  include:
+    - os: linux
+      dist: trusty
+      sudo: required
+      language: java
+      jdk: oraclejdk8
+    - os: linux
+      dist: bionic
+      sudo: required
+      language: java
+      jdk: openjdk11
 
 #php: 7.1
 
 #services:
 #  - mysql
 
-os:
-  - linux
+
 
 before_script:
   # for debugging purposes
