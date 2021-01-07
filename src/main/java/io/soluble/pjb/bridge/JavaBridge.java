@@ -875,7 +875,7 @@ public final class JavaBridge implements Runnable {
                         Collection coll = m.values();
                         if (!parms[i].isInstance(coll)) {
                             try { // could be a concrete class, for example LinkedList.
-                                Collection collection = (Collection) parms[i].newInstance();
+                                Collection collection = (Collection) parms[i].getDeclaredConstructor().newInstance();
                                 collection.addAll(coll);
                                 coll = collection;
                             } catch (Exception e) { // it was an interface, try some concrete class
@@ -896,7 +896,7 @@ public final class JavaBridge implements Runnable {
                     try {
                         Map ht = (Map) arg;
                         Hashtable res;
-                        res = (Hashtable) parms[i].newInstance();
+                        res = (Hashtable) parms[i].getDeclaredConstructor().newInstance();
                         res.putAll(ht);
 
                         result[i] = res;

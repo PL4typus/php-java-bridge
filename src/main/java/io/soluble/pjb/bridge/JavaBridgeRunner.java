@@ -321,7 +321,7 @@ public class JavaBridgeRunner extends HttpServer {
             out.println("<h4>Available script engines</h4><ul>");
             try {
                 Class c = Class.forName("javax.script.ScriptEngineManager");
-                Object o = c.newInstance();
+                Object o = c.getDeclaredConstructor().newInstance();
                 Method ex = c.getMethod("getEngineByExtension", new Class[]{String.class});
                 if (ex.invoke(o, (Object[]) new String[]{"php"}) == null) {
                     out.println("Warning: php-script.jar not found. Please copy it to the directory containing JavaBridge.jar before starting JavaBridge.<br><br>");
