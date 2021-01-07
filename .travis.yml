@@ -9,7 +9,7 @@ matrix:
       dist: bionic
       sudo: required
       language: java
-      jdk: openjdk11
+      jdk: oraclejdk11
 
 #php: 7.1
 
