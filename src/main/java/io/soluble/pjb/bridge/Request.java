@@ -207,7 +207,7 @@ public final class Request implements IDocHandler {
                     if (st[0].string[st[0].off] == 'S')
                         arg.key = st[1].getCachedStringValue();
                     else {
-                        arg.key = new Integer(st[1].getIntValue());
+                        arg.key = Integer.valueOf(st[1].getIntValue());
                     }
                 } else // array
                     arg.key = null;
@@ -234,11 +234,11 @@ public final class Request implements IDocHandler {
                 }
                 break;
             case 'B': {
-                arg.add(new Boolean(st[0].string[st[0].off] == 'T'));
+                arg.add(Boolean.valueOf(st[0].string[st[0].off] == 'T'));
                 break;
             }
             case 'T': {
-                arg.add(new Boolean(st[0].string[st[0].off] == '1'));
+                arg.add(Boolean.valueOf(st[0].string[st[0].off] == '1'));
                 break;
             }
             case 'L': {
@@ -256,7 +256,7 @@ public final class Request implements IDocHandler {
                 break;
             }
             case 'D': {
-                arg.add(new Double(st[0].getDoubleValue()));
+                arg.add(Double.valueOf(st[0].getDoubleValue()));
                 break;
             }
             case 'E': {
@@ -778,7 +778,7 @@ public final class Request implements IDocHandler {
             if (key != null) {
                 ht.put(key, val);
             } else {
-                ht.put(new Integer(count++), val);
+                ht.put(Integer.valueOf(count++), val);
             }
 
         }

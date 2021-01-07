@@ -524,7 +524,7 @@ public final class Response {
                         writeLong(((Number) value).longValue());
                     else {
                         try {
-                            writeLong(new Long(Util.stringValueOf(value)).longValue());
+                            writeLong(Long.valueOf(Util.stringValueOf(value)).longValue());
                         } catch (NumberFormatException n) {
                             writeLong(0);
                         }
@@ -534,7 +534,7 @@ public final class Response {
                         writeDouble(((Number) value).doubleValue());
                     else {
                         try {
-                            writeDouble(new Double(Util.stringValueOf(value)).doubleValue());
+                            writeDouble(Double.valueOf(Util.stringValueOf(value)).doubleValue());
                         } catch (NumberFormatException n) {
                             writeDouble(0.0);
                         }

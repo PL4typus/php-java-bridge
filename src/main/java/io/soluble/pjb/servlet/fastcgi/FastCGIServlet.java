@@ -218,7 +218,7 @@ public class FastCGIServlet extends HttpServlet {
 	 */
         int contentLength = req.getContentLength();
         String sContentLength = (contentLength <= 0 ? "" :
-                (new Integer(contentLength)).toString());
+                (Integer.valueOf(contentLength)).toString());
         envp.put("CONTENT_LENGTH", sContentLength);
 
 

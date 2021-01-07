@@ -790,17 +790,17 @@ public final class JavaBridge implements Runnable {
                         if (clazz == Boolean.TYPE) {
                             result[i] = Boolean.valueOf(s);
                         } else if (clazz == Byte.TYPE) {
-                            result[i] = new Byte(s);
+                            result[i] = Byte.valueOf(s);
                         } else if (clazz == Short.TYPE) {
-                            result[i] = new Short(s);
+                            result[i] = Short.valueOf(s);
                         } else if (clazz == Integer.TYPE) {
-                            result[i] = new Integer(s);
+                            result[i] = Integer.valueOf(s);
                         } else if (clazz == Float.TYPE) {
-                            result[i] = new Float(s);
+                            result[i] = Float.valueOf(s);
                         } else if (clazz == Double.TYPE) {
-                            result[i] = new Double(s);
+                            result[i] = Double.valueOf(s);
                         } else if (clazz == Long.TYPE) {
-                            result[i] = new Long(s);
+                            result[i] = Long.valueOf(s);
                         } else if (clazz == Character.TYPE && s.length() > 0) {
                             result[i] = s.charAt(0);
                         }

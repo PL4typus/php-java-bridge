@@ -226,7 +226,7 @@ public class Standalone {
         try {
             runner = Util.classForName("io.soluble.pjb.script.JavaBridgeScriptRunner");
             Method m = runner.getMethod("getRequiredInstance", new Class[]{String.class, Boolean.TYPE});
-            r = (JavaBridgeRunner) m.invoke(runner, new Object[]{serverPort, new Boolean(isSecure)});
+            r = (JavaBridgeRunner) m.invoke(runner, new Object[]{serverPort, Boolean.valueOf(isSecure)});
         } catch (Throwable e) {
             r = JavaBridgeRunner.getRequiredInstance(serverPort, isSecure);
         }

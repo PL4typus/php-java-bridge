@@ -121,7 +121,7 @@ public abstract class PhpMap {
 
                         public Object currentKey() {
                             if (!valid) return null;
-                            return _bridge.castToExact(new Integer(i));
+                            return _bridge.castToExact(Integer.valueOf(i));
                         }
 
                         public boolean moveForward() {
@@ -156,7 +156,7 @@ public abstract class PhpMap {
                         }
 
                         public Object currentKey() {
-                            return _bridge.castToExact(new Integer(i));
+                            return _bridge.castToExact(Integer.valueOf(i));
                         }
 
                         public boolean moveForward() {
