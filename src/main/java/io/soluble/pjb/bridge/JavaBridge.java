@@ -949,7 +949,7 @@ public final class JavaBridge implements Runnable {
 
         @Override
         public boolean checkAccessible(AccessibleObject o) {
-            if (!o.isAccessible()) {
+            if (!o.canAccess(o)) {
                 try {
                     o.setAccessible(true);
                 } catch (java.lang.SecurityException ex) {
